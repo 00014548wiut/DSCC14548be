@@ -1,0 +1,6 @@
+@_14548DSCC_HostAddress = http://localhost:5095
+
+GET {{_14548DSCC_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
