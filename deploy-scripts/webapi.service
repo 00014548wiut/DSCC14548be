@@ -1,9 +1,9 @@
 [Unit]
-Description=.NET Dice Roll Web API
+Description=.14548DSCC
 
 [Service]
 WorkingDirectory=/var/www/
-ExecStart=/usr/bin/dotnet /var/www/DiceRoll.API.dll
+ExecStart=/usr/bin/dotnet /var/www/14548DSCC.dll
 Restart=always
 # Restart service after 10 seconds when dotnet service crashes:
 RestartSec=10
