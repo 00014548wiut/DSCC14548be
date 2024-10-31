@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: app
+  - source: 14548DSCC/app
     destination: /var/www
   - source: deploy-scripts/webapi.service
     destination: /etc/systemd/system
