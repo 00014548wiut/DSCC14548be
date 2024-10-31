@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using _14548DSCC.Models;
 
@@ -9,10 +10,12 @@ using _14548DSCC.Models;
 
 namespace _14548DSCC.Migrations
 {
-    [DbContext(typeof(ProductContext))]
-    partial class ProductContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(ModelContext))]
+    [Migration("20241030214951_RDS")]
+    partial class RDS
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -20,6 +23,30 @@ namespace _14548DSCC.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("_14548DSCC.Models.Electronic", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Company")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Model")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Electronic");
+                });
 
             modelBuilder.Entity("_14548DSCC.Models.Product", b =>
                 {
@@ -39,7 +66,7 @@ namespace _14548DSCC.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Products");
+                    b.ToTable("Product");
                 });
 #pragma warning restore 612, 618
         }

@@ -10,9 +10,9 @@ namespace _14548DSCC.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        private readonly ProductContext _dbcontext;
+        private readonly ModelContext _dbcontext;
 
-        public ProductController(ProductContext dbcontext) 
+        public ProductController(ModelContext dbcontext) 
         {
             _dbcontext = dbcontext;
 

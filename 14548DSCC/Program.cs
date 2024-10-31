@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddDbContext<ProductContext>(options =>
+builder.Services.AddDbContext<ModelContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("ProductCS")));
 
 builder.Services.AddControllers();
