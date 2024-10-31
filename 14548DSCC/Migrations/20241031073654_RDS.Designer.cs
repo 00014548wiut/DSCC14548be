@@ -11,7 +11,7 @@ using _14548DSCC.Models;
 namespace _14548DSCC.Migrations
 {
     [DbContext(typeof(ModelContext))]
-    [Migration("20241030214951_RDS")]
+    [Migration("20241031073654_RDS")]
     partial class RDS
     {
         /// <inheritdoc />
